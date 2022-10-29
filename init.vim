@@ -2,9 +2,9 @@ syntax on
 highlight StatusLine cterm=bold ctermfg=yellow ctermbg=blue
 set number
 set expandtab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set ignorecase
 set smartcase
 set notimeout
@@ -99,6 +99,10 @@ call plug#begin('~/.config/nvim/plugged')
 
   " kuohao
   Plug 'luochen1990/rainbow'
+
+  Plug 'easymotion/vim-easymotion'
+
+  Plug 'tpope/vim-surround'
   call plug#end()
 " =======================
 " ===   plugins  end  ===
@@ -315,3 +319,6 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " ===
 map <silent> T :TagbarOpenAutoClose<CR>
 
+
+" === easymotion
+nmap ss <Plug>(easymotion-s2)

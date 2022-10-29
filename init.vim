@@ -103,6 +103,9 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'easymotion/vim-easymotion'
 
   Plug 'tpope/vim-surround'
+
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
   call plug#end()
 " =======================
 " ===   plugins  end  ===
@@ -314,6 +317,25 @@ command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.org
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
+" Mappings for CoCList
+" Show all diagnostics.
+nnoremap <silent><nowait> <space>ca  :<C-u>CocList diagnostics<cr>
+" Manage extensions.
+nnoremap <silent><nowait> <space>ce  :<C-u>CocList extensions<cr>
+" Show commands.
+nnoremap <silent><nowait> <space>cc  :<C-u>CocList commands<cr>
+" Find symbol of current document.
+nnoremap <silent><nowait> <space>co  :<C-u>CocList outline<cr>
+" Search workspace symbols.
+nnoremap <silent><nowait> <space>cs  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent><nowait> <space>cj  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent><nowait> <space>ck  :<C-u>CocPrev<CR>
+" Resume latest coc list.
+nnoremap <silent><nowait> <space>cp  :<C-u>CocListResume<CR>
+
+
 " ===
 " === Taglist
 " ===
@@ -322,3 +344,9 @@ map <silent> T :TagbarOpenAutoClose<CR>
 
 " === easymotion
 nmap ss <Plug>(easymotion-s2)
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>

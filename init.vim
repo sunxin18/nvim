@@ -18,14 +18,47 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   au VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" ==================== Basic Mappings ====================
+nnoremap Q :q<CR>
+nnoremap S :w<CR>
 noremap H 5h
 noremap J 5j
 noremap K 5k
 noremap L 5ll
 
-" 标签
+" ==================== Window management ====================
+" Use <space> + new arrow keys for moving the cursor around windows
+map <LEADER>q <C-w>w
+map <LEADER>w <C-w>k
+map <LEADER>d <C-w>j
+map <LEADER>s <C-w>h
+map <LEADER>a <C-w>l
+"map <LEADER>r <C-w>r"
+"" " Disable the default s key
+noremap s <nop>
+" split the screens to up (horizontal), down (horizontal), left (vertical), right (vertical)
+noremap su :set nosplitbelow<CR>:split<CR>:set splitbelow<CR>
+noremap sd :set splitbelow<CR>:split<CR>
+noremap sl :set nosplitright<CR>:vsplit<CR>:set splitright<CR>
+noremap sr :set splitright<CR>:vsplit<CR>
+
+" Resize splits with arrow keys
+noremap <leader><up> :res +5<CR>
+noremap <leader><down> :res -5<CR>
+noremap <leader><left> :vertical resize-5<CR>
+noremap <leader><right> :vertical resize+5<CR>
+
+" ==================== Tab management ====================
+" Create a new tab with tu
+noremap tu :tabe<CR>
+noremap tU :tab split<CR>
+" switch tabs
 map tn :+tabnext<CR>
 map tp :-tabnext<CR>
+" move tab
+noremap tmn :-tabmove<CR>
+noremap tmp :+tabmove<CR>
+
 """ =======================
 " ===  plugins  begin ===
 " =======================
@@ -57,6 +90,15 @@ call plug#begin('~/.config/nvim/plugged')
 
   " aireline
   Plug 'vim-airline/vim-airline'
+  
+  "git
+  Plug 'f-person/git-blame.nvim'
+
+  "terminal
+  Plug 'voldikss/vim-floaterm'
+
+  " kuohao
+  Plug 'luochen1990/rainbow'
   call plug#end()
 " =======================
 " ===   plugins  end  ===
@@ -70,10 +112,12 @@ vmap <LEADER>cn g>
 nmap <LEADER>cu g<c
 vmap <LEADER>cu g<
 
-
+" rainbow
+let g:rainbow_active = 1
 " ==== preservim/nerdtree ====
 
 nnoremap <LEADER>e :NERDTreeToggle<CR>
+nnoremap <LEADER>v :NERDTreeFind<CR>
 
 " == NERDTree-git
 " ==
@@ -123,7 +167,13 @@ hi default link LspCxxHlSymEnumMember cxxEnumMember
 hi default link LspCxxHlSymParameter cxxParameter
 hi default link LspCxxHlSymClass cxxTypeAlias
 
-" coc
+
+" terminal
+let g:floaterm_keymap_new    = '<Leader>tm'
+let g:floaterm_keymap_prev   = '<Leader>tp'
+let g:floaterm_keymap_next   = '<Leader>tn'
+let g:floaterm_keymap_toggle = '<Leader>tt'
+"" coc
 " May need for vim (not neovim) since coc.nvim calculate byte offset by count
 " utf-8 byte sequence.
 set encoding=utf-8
@@ -179,7 +229,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call ShowDocumentation()<CR>
+nnoremap <silent>sd :call ShowDocumentation()<CR>
 
 function! ShowDocumentation()
   if CocAction('hasProvider', 'hover')
@@ -264,3 +314,4 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " === Taglist
 " ===
 map <silent> T :TagbarOpenAutoClose<CR>
+

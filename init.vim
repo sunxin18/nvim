@@ -93,7 +93,7 @@ call plug#begin('~/.config/nvim/plugged')
   
   "git
   Plug 'f-person/git-blame.nvim'
-
+  Plug 'lewis6991/gitsigns.nvim'
   "terminal
   Plug 'voldikss/vim-floaterm'
 
@@ -106,6 +106,8 @@ call plug#begin('~/.config/nvim/plugged')
 
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+  Plug 'nvim-telescope/telescope-file-browser.nvim'
+  Plug 'princejoogie/dir-telescope.nvim'
   call plug#end()
 " =======================
 " ===   plugins  end  ===
@@ -350,3 +352,11 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+nnoremap <leader>df <cmd>Telescope dir find_files<cr>
+nnoremap <leader>dg <cmd>Telescope dir live_grep<cr>
+
+"git 
+nmap <leader>hs :Gitsigns stage_hunk<CR>
+nmap <leader>hr :Gitsigns reset_hunk<CR>
+

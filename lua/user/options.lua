@@ -7,6 +7,7 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.notimeout = true
 vim.o.mouse = a 
+vim.o.scrolloff = 10
 
 vim.termguicolors = true
 vim.g.vsdark_style = "dark"

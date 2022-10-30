@@ -35,15 +35,22 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "H", "5h", opts)
 keymap("n", "J", "5j", opts) 
 keymap("n", "K", "5k", opts)
-keymap("n", "l", "5l", opts)
+keymap("n", "L", "5l", opts)
 keymap("n", "Q", ":q<CR", opts)
 keymap("n", "S", ":w<CR>", opts)
 
--- tab
+-- tab management
 keymap("n", "tu", ":tabe<CR>", opts)
 keymap("n", "tU", ":tab split<CR>", opts)
 keymap("n", "tn", ":+tabnext<CR>", opts)
 keymap("n", "tp", ":-tabnext<CR>", opts)
+
+-- window management
+keymap("n", "<Leader>q", "<C-w>w", opts)
+keymap("n", "<Leader>a", "<C-w>h", opts)
+keymap("n", "<Leader>s", "<C-w>j", opts)
+keymap("n", "<Leader>w", "<C-w>k", opts)
+keymap("n", "<Leader>d", "<C-w>l", opts)
 -- Split window
 
 keymap("n", "s", ":<nop>", opts)
@@ -71,4 +78,16 @@ nmap <LEADER>cn g>c
 vmap <LEADER>cn g>
 nmap <LEADER>cu g<c
 vmap <LEADER>cu g<
+]]
+
+
+-- Find files using Telescope command-line sugar.
+vim.cmd [[
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+nnoremap <leader>df <cmd>Telescope dir find_files<cr>
+nnoremap <leader>dg <cmd>Telescope dir live_grep<cr>
 ]]

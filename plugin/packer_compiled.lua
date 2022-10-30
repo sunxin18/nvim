@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["diffview.nvim"] = {
+    loaded = true,
+    path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/diffview.nvim",
+    url = "https://github.com/sindrets/diffview.nvim"
+  },
   ["dir-telescope.nvim"] = {
     loaded = true,
     path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/dir-telescope.nvim",
@@ -118,6 +123,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
+  },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -193,11 +208,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/vim-illuminate",
     url = "https://github.com/RRethy/vim-illuminate"
-  },
-  ["vsdark.nvim"] = {
-    loaded = true,
-    path = "/Users/bytedance/.local/share/nvim/site/pack/packer/start/vsdark.nvim",
-    url = "https://github.com/cateduo/vsdark.nvim"
   }
 }
 

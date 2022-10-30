@@ -45,6 +45,8 @@ return packer.startup(function(use)
 	-- file explorer
 	use "preservim/nerdtree"
     
+    -- colarschemes
+    use 'ellisonleao/gruvbox.nvim'
     -- airline
     use "vim-airline/vim-airline"
 
@@ -54,8 +56,6 @@ return packer.startup(function(use)
     -- autopairs
     use "jiangmiao/auto-pairs"
     
-    -- highlight
-    use "cateduo/vsdark.nvim"
     -- easyemotion
     use "easymotion/vim-easymotion"
     
@@ -70,6 +70,10 @@ return packer.startup(function(use)
     use "princejoogie/dir-telescope.nvim"
 
 
+    -- git
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+    
+    use { "lewis6991/gitsigns.nvim", commit = "2c6f96dda47e55fa07052ce2e2141e8367cbaaf2" }
 -- Cmp 
     use { "hrsh7th/nvim-cmp", commit = "b0dff0ec4f2748626aae13f011d1a47071fe9abc" } -- The completion plugin
     use { "hrsh7th/cmp-buffer", commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" } -- buffer completions

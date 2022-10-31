@@ -58,6 +58,8 @@ return packer.startup(function(use)
     -- autopairs
     use "jiangmiao/auto-pairs"
     
+    -- tagbar 
+    use "preservim/tagbar"
     -- easyemotion
     use "easymotion/vim-easymotion"
     

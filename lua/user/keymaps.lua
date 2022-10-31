@@ -91,3 +91,9 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>df <cmd>Telescope dir find_files<cr>
 nnoremap <leader>dg <cmd>Telescope dir live_grep<cr>
 ]]
+
+-- tabbar
+--
+keymap("n", "T", ":TagbarToggle", opts)
+-- easyemotio
+vim.cmd [[nmap ss <Plug>(easymotion-s2)]]

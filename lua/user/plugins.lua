@@ -47,6 +47,8 @@ return packer.startup(function(use)
     
     -- colarschemes
     use 'ellisonleao/gruvbox.nvim'
+
+    use 'folke/tokyonight.nvim'
     -- airline
     use "vim-airline/vim-airline"
 
@@ -92,6 +94,12 @@ return packer.startup(function(use)
     use { "williamboman/mason-lspconfig.nvim", commit = "0051870dd728f4988110a1b2d47f4a4510213e31" }
 	use { "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" } -- for formatters and linters
     use { "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" }
+    
+    -- Treesitter
+	use {
+		"nvim-treesitter/nvim-treesitter",
+		commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
+	}
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

@@ -24,10 +24,10 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts) 
 
 -- Resize with arrows
-keymap("n", "<LEADER><up>", ":resize -2<CR>", opts)
-keymap("n", "<LEADER><down>", ":resize +2<CR>", opts)
-keymap("n", "<LEADER><left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<LEADER><right>", ":vertical resize +2<CR>", opts)
+keymap("n","A<up>", ":resize -2<CR>", opts)
+keymap("n", "A<down>", ":resize +2<CR>", opts)
+keymap("n", "A<left>", ":vertical resize -2<CR>", opts)
+keymap("n", "A<right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
@@ -65,10 +65,10 @@ keymap("n", "<LEADER>e", ":NERDTreeToggle<CR>", opts)
 keymap("n", "<LEADER>v", ":NERDTreeFind<CR>", opts)
 
 vim.cmd [[
-let g:floaterm_keymap_new    = '<Leader>tm'
-let g:floaterm_keymap_prev   = '<Leader>tp'
-let g:floaterm_keymap_next   = '<Leader>tn'
-let g:floaterm_keymap_toggle = '<Leader>tt'
+let g:floaterm_keymap_new    = ';tm'
+let g:floaterm_keymap_prev   = ';tp'
+let g:floaterm_keymap_next   = ';tn'
+let g:floaterm_keymap_toggle = ';tt'
 ]]
 
 -- tomtom/tcomment_vim ====
@@ -86,7 +86,8 @@ vim.cmd [[
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fh <cmd>Telescope search_history<cr>
+nnoremap <leader>fr <cmd>Telescope oldfiles<cr>
 
 nnoremap <leader>df <cmd>Telescope dir find_files<cr>
 nnoremap <leader>dg <cmd>Telescope dir live_grep<cr>
@@ -97,3 +98,26 @@ nnoremap <leader>dg <cmd>Telescope dir live_grep<cr>
 keymap("n", "T", ":TagbarToggle", opts)
 -- easyemotio
 vim.cmd [[nmap ss <Plug>(easymotion-s2)]]
+
+-- trouble 
+vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>",
+  {silent = true, noremap = true}
+)
+
+-- calltree
+keymap("n", "<leader>in", "<cmd>lua vim.lsp.buf.incoming_calls()<cr>", opts)

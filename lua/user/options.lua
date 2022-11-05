@@ -10,3 +10,4 @@ vim.o.mouse = a
 vim.o.scrolloff = 10
 
 vim.termguicolors = true
+vim.o.noswapfile = true

@@ -42,9 +42,6 @@ return packer.startup(function(use)
     use "wbthomason/packer.nvim"
 	-- enhance editor
 	use "tomtom/tcomment_vim"
-	-- file explorer
-	use "preservim/nerdtree"
-    
     -- colarschemes
     use 'ellisonleao/gruvbox.nvim'
 
@@ -58,11 +55,15 @@ return packer.startup(function(use)
     -- autopairs
     use "jiangmiao/auto-pairs"
     
+    --auto save/load
+    -- use "Pocco81/AutoSave.nvim"
+    use "djoshea/vim-autoread"
     -- tagbar 
     use "preservim/tagbar"
     -- easyemotion
     use "easymotion/vim-easymotion"
     
+    use "simrat39/symbols-outline.nvim" -- outline
     -- telescope
     use "nvim-lua/plenary.nvim"
     use {
@@ -74,6 +75,14 @@ return packer.startup(function(use)
     use "princejoogie/dir-telescope.nvim"
 
 
+    -- nvim-tree
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+        'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
+        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    }   
     -- git
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
     
@@ -98,6 +107,8 @@ return packer.startup(function(use)
     use "williamboman/mason-lspconfig.nvim"
 	use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
     use "RRethy/vim-illuminate"
+    use "kosayoda/nvim-lightbulb" -- code action
+    use "ray-x/lsp_signature.nvim" -- show function signature when typing
     
     use {
         "folke/trouble.nvim",

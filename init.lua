@@ -6,5 +6,6 @@ require "user.lsp"
 require "user.gitsigns"
 require "user.treesitter"
 require "user.trouble"
-
+require "user.symbols-outline"
+require "user.nvim-tree"
 vim.cmd[[colorscheme tokyonight]]

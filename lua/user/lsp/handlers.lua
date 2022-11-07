@@ -86,6 +86,7 @@ M.on_attach = function(client, bufnr)
 	if not status_ok then
 		return
 	end
+    require "lsp_signature".on_attach() -- add signature
 	illuminate.on_attach(client)
 end
 

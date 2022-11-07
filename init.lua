@@ -8,4 +8,6 @@ require "user.treesitter"
 require "user.trouble"
 require "user.symbols-outline"
 require "user.nvim-tree"
+require "user.bufferline"
+require "user.neovim-session-manager"
 vim.cmd[[colorscheme tokyonight]]

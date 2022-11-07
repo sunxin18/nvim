@@ -36,7 +36,7 @@ keymap("n", "H", "5h", opts)
 keymap("n", "J", "5j", opts) 
 keymap("n", "K", "5k", opts)
 keymap("n", "L", "5l", opts)
-keymap("n", "Q", ":q<CR", opts)
+keymap("n", "Q", ":q<CR>", opts)
 keymap("n", "S", ":w<CR>", opts)
 
 -- tab management
@@ -45,20 +45,19 @@ keymap("n", "tU", ":tab split<CR>", opts)
 keymap("n", "tn", ":+tabnext<CR>", opts)
 keymap("n", "tp", ":-tabnext<CR>", opts)
 
--- window management
-keymap("n", "<Leader>q", "<C-w>w", opts)
-keymap("n", "<Leader>a", "<C-w>h", opts)
-keymap("n", "<Leader>s", "<C-w>j", opts)
-keymap("n", "<Leader>w", "<C-w>k", opts)
-keymap("n", "<Leader>d", "<C-w>l", opts)
 -- Split window
+keymap("n", "<leader>s", ":<nop>", opts)
+keymap("n", "<leader>su", ":set nosplitbelow<CR>:split<CR>:set splitbelow<CR>", opts)
+keymap("n", "<leader>sd", ":set splitbelow<CR>:split<CR>", opts)
+keymap("n", "<leader>sl", ":set nosplitright<CR>:vsplit<CR>:set splitright<CR>", opts)
+keymap("n", "<leader>sr", ":set splitright<CR>:vsplit<CR>", opts)
 
-keymap("n", "s", ":<nop>", opts)
-keymap("n", "su", ":set nosplitbelow<CR>:split<CR>:set splitbelow<CR>", opts)
-keymap("n", "sd", ":set splitbelow<CR>:split<CR>", opts)
-keymap("n", "sl", ":set nosplitright<CR>:vsplit<CR>:set splitright<CR>", opts)
-keymap("n", "sr", ":set splitright<CR>:vsplit<CR>", opts)
+-- NOTE: E/R navigation needs  'bufferline' plugin
+keymap("n", "R", ":BufferLineCycleNext<CR>", opts)
+keymap("n", "E", ":BufferLineCyclePrev<CR>", opts)
 
+-- delete cur buffer
+keymap("n", "<leader>d", ":bp<bar>sp<bar>bn<bar>bd<CR>", opts)
 
 -- nerdtree
 keymap("n", "<Leader>e", ":NvimTreeToggle<cr>", opts)
@@ -91,10 +90,23 @@ nnoremap <leader>fr <cmd>Telescope oldfiles<cr>
 nnoremap <leader>fs <cmd>Telescope lsp_document_symbols<cr>
 nnoremap <leader>fS <cmd>Telescope lsp_workspace_symbols<cr>
 
+
 nnoremap <leader>df <cmd>Telescope dir find_files<cr>
 nnoremap <leader>dg <cmd>Telescope dir live_grep<cr>
-]]
 
+
+]]
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<leader>fh", "<cmd>Telescope search_history<cr>", opts)
+keymap("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", opts)
+keymap("n", "<leader>fs", "<cmd>Telescope lsp_document_symbols<cr>", opts)
+keymap("n", "<leader>fS", "<cmd>Telescope lsp_workspace_symbols<cr>", opts)
+keymap("n", "<leader>fp", "<cmd>lua require'telescope'.extensions.project.project{}<CR>", opts)
+
+keymap("n", "<leader>df", "<cmd>Telescope dir find_files<cr>", opts)
+keymap("n", "<leader>dg", "<cmd>Telescope dir live_grep<cr>", opts)
 -- tabbar
 --
 keymap("n", "T", ":TagbarToggle", opts)

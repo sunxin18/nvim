@@ -49,12 +49,13 @@ return packer.startup(function(use)
     -- airline
     use "vim-airline/vim-airline"
 
+    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'kyazdani42/nvim-web-devicons'} -- bufferline
     -- terminal
     use "voldikss/vim-floaterm"
 
-    -- autopairs
-    use "jiangmiao/auto-pairs"
-    
+    -- Editor enhance
+    use "jiangmiao/auto-pairs" -- autopairs
+    use "Shatur/neovim-session-manager"
     --auto save/load
     -- use "Pocco81/AutoSave.nvim"
     use "djoshea/vim-autoread"
@@ -75,6 +76,11 @@ return packer.startup(function(use)
     use "princejoogie/dir-telescope.nvim"
 
 
+    -- project
+    use "nvim-telescope/telescope-project.nvim" -- project manager
+    use "tpope/vim-surround" -- vim surround
+    
+    use "lukas-reineke/indent-blankline.nvim" -- indent blankline
     -- nvim-tree
     use {
         'nvim-tree/nvim-tree.lua',
@@ -110,6 +116,7 @@ return packer.startup(function(use)
     use "kosayoda/nvim-lightbulb" -- code action
     use "ray-x/lsp_signature.nvim" -- show function signature when typing
     
+    use "j-hui/fidget.nvim" -- show lsp progress
     use {
         "folke/trouble.nvim",
         requires = "kyazdani42/nvim-web-devicons",
@@ -126,6 +133,9 @@ return packer.startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
 	}
+    use 'nvim-treesitter/nvim-treesitter-context'
+    
+    use "voldikss/vim-translator"
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

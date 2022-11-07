@@ -1,13 +1,21 @@
-vim.o.number = true
-vim.o.expandtab = true
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
-vim.o.softtabstop = 4
-vim.o.ignorecase = true
-vim.o.smartcase = true
-vim.o.notimeout = true
-vim.o.mouse = a 
-vim.o.scrolloff = 10
+local options = {
+    number = true,
+    expandtab = true,
+    tabstop = 4,
+    shiftwidth = 4,
+    softtabstop = 4,
+    ignorecase = true,
+    smartcase = true,
+    mouse = "a",
+    swapfile = false,                        -- creates a swapfile
+    scrolloff = 8,                           -- keep 8 height offset from above and bottom
+    sidescrolloff = 8,                       -- keep 8 width offset from left and right
+    termguicolors = true,                    -- set term gui colors (most terminals support this)
+    timeoutlen = 500,                        -- time to wait for a mapped sequence to complete (in milliseconds)
+}
 
-vim.termguicolors = true
-vim.o.noswapfile = true
+vim.opt.shortmess:append "c"
+for k, v in pairs(options) do
+  vim.opt[k] = v
+end
+

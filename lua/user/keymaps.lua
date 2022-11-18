@@ -17,8 +17,7 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
--- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
+-- Better window navigation keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts) 
@@ -35,13 +34,9 @@ keymap("n", "L", "$", opts)
 keymap("v", "H", "^", opts)
 keymap("v", "L", "$", opts)
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<leader>l", ":bnext<CR>", opts)
+keymap("n", "<leader>h", ":bprevious<CR>", opts)
 
-keymap("n", "H", "5h", opts)
-keymap("n", "J", "5j", opts) 
-keymap("n", "K", "5k", opts)
-keymap("n", "L", "5l", opts)
 keymap("n", "Q", ":q<CR>", opts)
 keymap("n", "S", ":w<CR>", opts)
 
@@ -67,6 +62,8 @@ keymap("n", "<leader>d", ":bp<bar>sp<bar>bn<bar>bd<CR>", opts)
 
 -- Press jl fast to enter
 keymap("i", "jl", "<ESC>", opts)
+-- exit whole program
+keymap("n", "ZZ", ":lua require('user.utils').SaveAndExit()<cr>", opts)
 
 -- nerdtree
 keymap("n", "<Leader>e", ":NvimTreeToggle<cr>", opts)

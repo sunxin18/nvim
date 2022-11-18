@@ -10,4 +10,5 @@ require "user.symbols-outline"
 require "user.nvim-tree"
 require "user.bufferline"
 require "user.neovim-session-manager"
+require "user.telescope"
 vim.cmd[[colorscheme tokyonight]]

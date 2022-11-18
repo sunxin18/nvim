@@ -24,10 +24,16 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts) 
 
 -- Resize with arrows
-keymap("n","A<up>", ":resize -2<CR>", opts)
-keymap("n", "A<down>", ":resize +2<CR>", opts)
-keymap("n", "A<left>", ":vertical resize -2<CR>", opts)
-keymap("n", "A<right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<Up>", ":resize -2<CR>", opts)
+keymap("n", "<Down>", ":resize +2<CR>", opts)
+keymap("n", "<Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<Right>", ":vertical resize +2<CR>", opts)
+
+-- Navigate line
+keymap("n", "H", "^", opts)
+keymap("n", "L", "$", opts)
+keymap("v", "H", "^", opts)
+keymap("v", "L", "$", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
@@ -59,6 +65,9 @@ keymap("n", "E", ":BufferLineCyclePrev<CR>", opts)
 -- delete cur buffer
 keymap("n", "<leader>d", ":bp<bar>sp<bar>bn<bar>bd<CR>", opts)
 
+-- Press jl fast to enter
+keymap("i", "jl", "<ESC>", opts)
+
 -- nerdtree
 keymap("n", "<Leader>e", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<Leader>v", ":NvimTreeFindFile<CR>", opts)
@@ -81,23 +90,9 @@ vmap <LEADER>cu g<
 
 
 -- Find files using Telescope command-line sugar.
-vim.cmd [[
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope search_history<cr>
-nnoremap <leader>fr <cmd>Telescope oldfiles<cr>
-nnoremap <leader>fs <cmd>Telescope lsp_document_symbols<cr>
-nnoremap <leader>fS <cmd>Telescope lsp_workspace_symbols<cr>
-
-
-nnoremap <leader>df <cmd>Telescope dir find_files<cr>
-nnoremap <leader>dg <cmd>Telescope dir live_grep<cr>
-
-
-]]
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
+-- keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>fg", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", opts)
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>fh", "<cmd>Telescope search_history<cr>", opts)
 keymap("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", opts)

@@ -18,6 +18,7 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 -- Better window navigation keymap("n", "<C-h>", "<C-w>h", opts)
+keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts) 
@@ -61,7 +62,7 @@ keymap("n", "E", ":BufferLineCyclePrev<CR>", opts)
 keymap("n", "<leader>d", ":bp<bar>sp<bar>bn<bar>bd<CR>", opts)
 
 -- Press jl fast to enter
-keymap("i", "jl", "<ESC>", opts)
+keymap("i", "jk", "<ESC>", opts)
 -- exit whole program
 keymap("n", "ZZ", ":lua require('user.utils').SaveAndExit()<cr>", opts)
 

@@ -100,9 +100,9 @@ keymap("n", "<leader>fp", "<cmd>lua require'telescope'.extensions.project.projec
 
 keymap("n", "<leader>df", "<cmd>Telescope dir find_files<cr>", opts)
 keymap("n", "<leader>dg", "<cmd>Telescope dir live_grep<cr>", opts)
--- tabbar
+-- outline 
 --
-keymap("n", "T", ":TagbarToggle", opts)
+keymap("n", "T", "<cmd>SymbolsOutline<cr>", opts)
 -- easyemotio
 vim.cmd [[nmap ss <Plug>(easymotion-s2)]]
 

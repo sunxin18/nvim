@@ -163,7 +163,7 @@ telescope.setup {
       theme = "dropdown",
       previewer = false,
       -- find_command = { "find", "-type", "f" },
-      find_command = { "fd", "-H" , "-I"},  -- "-H" search hidden files, "-I" do not respect to gitignore
+      -- find_command = { "fd", "-H" , "-I"},  -- "-H" search hidden files, "-I" do not respect to gitignore
     },
 
     -- Default configuration for builtin pickers goes here:

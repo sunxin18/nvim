@@ -17,7 +17,7 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
--- Better window navigation
+-- Better window navigation keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
@@ -35,13 +35,9 @@ keymap("n", "L", "$", opts)
 keymap("v", "H", "^", opts)
 keymap("v", "L", "$", opts)
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<leader>l", ":bnext<CR>", opts)
+keymap("n", "<leader>h", ":bprevious<CR>", opts)
 
-keymap("n", "H", "5h", opts)
-keymap("n", "J", "5j", opts) 
-keymap("n", "K", "5k", opts)
-keymap("n", "L", "5l", opts)
 keymap("n", "Q", ":q<CR>", opts)
 keymap("n", "S", ":w<CR>", opts)
 
@@ -66,12 +62,15 @@ keymap("n", "E", ":BufferLineCyclePrev<CR>", opts)
 keymap("n", "<leader>d", ":bp<bar>sp<bar>bn<bar>bd<CR>", opts)
 
 -- Press jl fast to enter
-keymap("i", "jl", "<ESC>", opts)
+keymap("i", "jk", "<ESC>", opts)
+-- exit whole program
+keymap("n", "ZZ", ":lua require('user.utils').SaveAndExit()<cr>", opts)
 
 -- nerdtree
 keymap("n", "<Leader>e", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<Leader>v", ":NvimTreeFindFile<CR>", opts)
 
+-- floatterm
 vim.cmd [[
 let g:floaterm_keymap_new    = '<Leader>tm'
 let g:floaterm_keymap_prev   = '<Leader>tp'
@@ -102,10 +101,11 @@ keymap("n", "<leader>fp", "<cmd>lua require'telescope'.extensions.project.projec
 
 keymap("n", "<leader>df", "<cmd>Telescope dir find_files<cr>", opts)
 keymap("n", "<leader>dg", "<cmd>Telescope dir live_grep<cr>", opts)
--- tabbar
---
-keymap("n", "T", ":TagbarToggle", opts)
--- easyemotio
+
+-- outline 
+keymap("n", "T", "<cmd>SymbolsOutline<cr>", opts)
+
+-- easyemotion
 vim.cmd [[nmap ss <Plug>(easymotion-s2)]]
 
 -- trouble 
@@ -129,6 +129,4 @@ vim.keymap.set("n", "gr", "<cmd>TroubleToggle lsp_references<cr>",
 )
 
 -- git
---
-
 keymap("n", "<Leader>gp", "<cmd>DiffviewFileHistory<CR>", opts)

@@ -70,6 +70,7 @@ keymap("n", "ZZ", ":lua require('user.utils').SaveAndExit()<cr>", opts)
 keymap("n", "<Leader>e", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<Leader>v", ":NvimTreeFindFile<CR>", opts)
 
+-- floatterm
 vim.cmd [[
 let g:floaterm_keymap_new    = '<Leader>tm'
 let g:floaterm_keymap_prev   = '<Leader>tp'
@@ -100,10 +101,11 @@ keymap("n", "<leader>fp", "<cmd>lua require'telescope'.extensions.project.projec
 
 keymap("n", "<leader>df", "<cmd>Telescope dir find_files<cr>", opts)
 keymap("n", "<leader>dg", "<cmd>Telescope dir live_grep<cr>", opts)
+
 -- outline 
---
 keymap("n", "T", "<cmd>SymbolsOutline<cr>", opts)
--- easyemotio
+
+-- easyemotion
 vim.cmd [[nmap ss <Plug>(easymotion-s2)]]
 
 -- trouble 
@@ -127,6 +129,4 @@ vim.keymap.set("n", "gr", "<cmd>TroubleToggle lsp_references<cr>",
 )
 
 -- git
---
-
 keymap("n", "<Leader>gp", "<cmd>DiffviewFileHistory<CR>", opts)

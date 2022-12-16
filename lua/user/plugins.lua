@@ -55,7 +55,7 @@ return packer.startup(function(use)
 
     -- Editor enhance
     use "jiangmiao/auto-pairs" -- autopairs
-    use "Shatur/neovim-session-manager"
+    -- use "Shatur/neovim-session-manager"
     --auto save/load
     -- use "Pocco81/AutoSave.nvim"
     use "djoshea/vim-autoread"

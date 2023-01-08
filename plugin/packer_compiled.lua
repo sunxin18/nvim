@@ -185,11 +185,6 @@ _G.packer_plugins = {
     path = "/data02/home/sunxin.181/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  ["neovim-session-manager"] = {
-    loaded = true,
-    path = "/data02/home/sunxin.181/.local/share/nvim/site/pack/packer/start/neovim-session-manager",
-    url = "https://github.com/Shatur/neovim-session-manager"
-  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/data02/home/sunxin.181/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -314,14 +309,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: aerial.nvim
-time([[Config for aerial.nvim]], true)
-try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vaerial\frequire\0", "config", "aerial.nvim")
-time([[Config for aerial.nvim]], false)
 -- Config for: trouble.nvim
 time([[Config for trouble.nvim]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
 time([[Config for trouble.nvim]], false)
+-- Config for: aerial.nvim
+time([[Config for aerial.nvim]], true)
+try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vaerial\frequire\0", "config", "aerial.nvim")
+time([[Config for aerial.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

@@ -98,13 +98,13 @@ keymap("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", opts)
 keymap("n", "<leader>fs", "<cmd>Telescope lsp_document_symbols<cr>", opts)
 keymap("n", "<leader>fS", "<cmd>Telescope lsp_workspace_symbols<cr>", opts)
 keymap("n", "<leader>fp", "<cmd>lua require'telescope'.extensions.project.project{}<CR>", opts)
+keymap("n", "<leader>fl", "<cmd>Telescope resume<cr>", opts)
 
 keymap("n", "<leader>df", "<cmd>Telescope dir find_files<cr>", opts)
 keymap("n", "<leader>dg", "<cmd>Telescope dir live_grep<cr>", opts)
 
 -- outline 
 keymap("n", "T", "<cmd>SymbolsOutline<cr>", opts)
-
 -- easyemotion
 vim.cmd [[nmap ss <Plug>(easymotion-s2)]]
 
@@ -129,4 +129,4 @@ vim.keymap.set("n", "gr", "<cmd>TroubleToggle lsp_references<cr>",
 )
 
 -- git
-keymap("n", "<Leader>gp", "<cmd>DiffviewFileHistory<CR>", opts)
+keymap("n", "<Leader>gh", "<cmd>DiffviewFileHistory<CR>", opts)

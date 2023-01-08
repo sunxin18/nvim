@@ -13,6 +13,7 @@ local options = {
     termguicolors = true,                    -- set term gui colors (most terminals support this)
     timeoutlen = 500,                        -- time to wait for a mapped sequence to complete (in milliseconds)
 }
+vim.cmd[[highlight LineNr guifg=red]]
 
 vim.opt.shortmess:append "c"
 for k, v in pairs(options) do

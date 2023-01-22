@@ -12,6 +12,8 @@ local options = {
     sidescrolloff = 8,                       -- keep 8 width offset from left and right
     termguicolors = true,                    -- set term gui colors (most terminals support this)
     timeoutlen = 500,                        -- time to wait for a mapped sequence to complete (in milliseconds)
+    foldmethod = "expr",                     -- fold with nvim_treesitter
+    foldlevel = 99,                          -- if not set this, fold will be everywhere
 }
 vim.cmd[[highlight LineNr guifg=red]]
 

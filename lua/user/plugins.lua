@@ -111,7 +111,7 @@ return packer.startup(function(use)
     use "williamboman/mason-lspconfig.nvim"
     use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
     use "RRethy/vim-illuminate"
-    use "kosayoda/nvim-lightbulb" -- code action
+    -- use "kosayoda/nvim-lightbulb" -- code action
     use "ray-x/lsp_signature.nvim" -- show function signature when typing
 
     use "j-hui/fidget.nvim" -- show lsp progress

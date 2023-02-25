@@ -11,6 +11,9 @@ require'nvim-treesitter.configs'.setup {
         if ok and stats and stats.size > max_filesize then
             return true
         end
+        if vim.api.nvim_buf_line_count(buf) > 50000 then
+            return true
+        end
     end,
     additional_vim_regex_highlighting = false
   }

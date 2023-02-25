@@ -158,6 +158,13 @@ telescope.setup {
       -- find_command = { "find", "-type", "f" },
       -- find_command = { "fd", "-H" , "-I"},  -- "-H" search hidden files, "-I" do not respect to gitignore
     },
+    buffers = {
+      previewer = flase,
+      path_display = { "absolute" },
+      wrap_results = true
+      -- find_command = { "find", "-type", "f" },
+      -- find_command = { "fd", "-H" , "-I"},  -- "-H" search hidden files, "-I" do not respect to gitignore
+    },
 
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
@@ -194,7 +201,7 @@ telescope.setup {
         -- even more opts
       }
     },
-    live_grep_raw = {
+    live_grep_args = {
       auto_quoting = false, -- enable/disable auto-quoting
       path_display = { "absolute" },
       wrap_results = true

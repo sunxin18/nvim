@@ -110,8 +110,8 @@ return packer.startup(function(use)
     use "williamboman/mason.nvim" -- simple to use language server installer
     use "williamboman/mason-lspconfig.nvim"
     use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-    use "RRethy/vim-illuminate"
-    -- use "kosayoda/nvim-lightbulb" -- code action
+    -- use "RRethy/vim-illuminate" -- hangs on with bigfile
+    use "kosayoda/nvim-lightbulb" -- code action
     use "ray-x/lsp_signature.nvim" -- show function signature when typing
 
     use "j-hui/fidget.nvim" -- show lsp progress
@@ -140,6 +140,9 @@ return packer.startup(function(use)
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     })
+    
+    -- copy ssh
+    use "ojroques/vim-oscyank"
 
     --
     -- Automatically set up your configuration after cloning packer.nvim

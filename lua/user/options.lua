@@ -14,6 +14,7 @@ local options = {
     timeoutlen = 500,                        -- time to wait for a mapped sequence to complete (in milliseconds)
     foldmethod = "expr",                     -- fold with nvim_treesitter
     foldlevel = 99,                          -- if not set this, fold will be everywhere
+    synmaxcol= 2048
 }
 vim.cmd[[highlight LineNr guifg=red]]
 

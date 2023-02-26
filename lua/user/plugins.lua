@@ -62,6 +62,10 @@ return packer.startup(function(use)
     -- easyemotion
     use "easymotion/vim-easymotion"
 
+    use 'karb94/neoscroll.nvim'
+    
+    use 'chentoast/marks.nvim'
+
     use {
         'stevearc/aerial.nvim',
         config = function() require('aerial').setup() end
@@ -72,6 +76,15 @@ return packer.startup(function(use)
     use "nvim-telescope/telescope-live-grep-args.nvim"
     use "nvim-telescope/telescope-file-browser.nvim"
     use "princejoogie/dir-telescope.nvim"
+    use {
+        'LukasPietzschmann/telescope-tabs',
+        requires = { 'nvim-telescope/telescope.nvim' },
+        config = function()
+            require'telescope-tabs'.setup{
+                -- Your custom config :^)
+            }
+        end
+    }
 
 
     -- project
@@ -111,7 +124,7 @@ return packer.startup(function(use)
     use "williamboman/mason-lspconfig.nvim"
     use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
     -- use "RRethy/vim-illuminate" -- hangs on with bigfile
-    use "kosayoda/nvim-lightbulb" -- code action
+    -- use "kosayoda/nvim-lightbulb" -- code action
     use "ray-x/lsp_signature.nvim" -- show function signature when typing
 
     use "j-hui/fidget.nvim" -- show lsp progress
@@ -143,6 +156,17 @@ return packer.startup(function(use)
     
     -- copy ssh
     use "ojroques/vim-oscyank"
+
+    -- use "dstein64/vim-startuptime"
+    use "tweekmonster/startuptime.vim"
+
+    
+    use {
+    'goolord/alpha-nvim',
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    end
+}
 
     --
     -- Automatically set up your configuration after cloning packer.nvim

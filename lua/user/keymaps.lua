@@ -107,6 +107,8 @@ keymap("n", "<leader>fl", "<cmd>Telescope resume<cr>", opts)
 keymap("n", "<leader>df", "<cmd>Telescope dir find_files<cr>", opts)
 keymap("n", "<leader>dg", "<cmd>Telescope dir live_grep<cr>", opts)
 
+keymap("n", "<leader>tl", "<cmd>Telescope telescope-tabs list_tabs<cr>", opts)
+
 -- outline 
 keymap("n", "T", "<cmd>SymbolsOutline<cr>", opts)
 -- easyemotion

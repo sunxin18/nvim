@@ -60,7 +60,9 @@ keymap("n", "E", ":BufferLineCyclePrev<CR>", opts)
 keymap("n", "<leader>1", ":BufferLineGoToBuffer 1<CR>", opts)
 keymap("n", "<leader>2", ":BufferLineGoToBuffer 2<CR>", opts)
 keymap("n", "<leader>3", ":BufferLineGoToBuffer 3<CR>", opts)
-keymap("n", "<leader>4", ":BufferLineGoToBuffer 4<CR>", opts)
+keymap("n", "<leader>5", ":BufferLineGoToBuffer 5<CR>", opts)
+keymap("n", "<leader>6", ":BufferLineGoToBuffer 6<CR>", opts)
+keymap("n", "<leader>7", ":BufferLineGoToBuffer 7<CR>", opts)
 
 -- delete cur buffer
 keymap("n", "<leader>d", ":bp<bar>sp<bar>bn<bar>bd<CR>", opts)
@@ -124,7 +126,7 @@ vim.keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>"
 vim.keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>",
   {silent = true, noremap = true}
 )
-vim.keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>",
+vim.keymap.set("n", "<leader>xl", "<cmd>TroubleTogle loclist<cr>",
   {silent = true, noremap = true}
 )
 vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
@@ -133,6 +135,9 @@ vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
 vim.keymap.set("n", "gr", "<cmd>TroubleToggle lsp_references<cr>",
   {silent = true, noremap = true}
 )
+
+-- osyank
+vim.keymap.set('v', '<leader>c', '<Plug>OSCYank')
 
 -- git
 keymap("n", "<Leader>gh", "<cmd>DiffviewFileHistory<CR>", opts)

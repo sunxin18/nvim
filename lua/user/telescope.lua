@@ -78,6 +78,15 @@ end
 
 telescope.setup {
   defaults = {
+    vimgrep_arguments = {
+        'rg',
+        '--color=never',
+        '--no-heading',
+        '--with-filename',
+        '--line-number',
+        '--column',
+        '--smart-case',
+    },
     buffer_previewer_maker = new_maker,
 
     prompt_prefix = " ",
@@ -204,7 +213,7 @@ telescope.setup {
     live_grep_args = {
       auto_quoting = false, -- enable/disable auto-quoting
       path_display = { "absolute" },
-      wrap_results = true
+      wrap_results = false
     }
   },
 }

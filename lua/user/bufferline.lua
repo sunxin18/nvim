@@ -34,7 +34,7 @@ bufferline.setup ({
       end
     end,
     max_name_length = 14,
-    max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
+    max_prefix_length = 12, -- prefix used when a buffer is de-duplicated
     tab_size = 14,
     diagnostics = false, --| "nvim_lsp" | "coc",
     diagnostics_update_in_insert = false,
@@ -62,15 +62,16 @@ bufferline.setup ({
       end
     end,
     offsets = {{filetype = "NvimTree", text = "File Explorer", text_align="center"}}, -- | function , text_align = "left" | "center" | "right"}},
+    color_icons = true, -- whether or not to add the filetype icon highlights
     show_buffer_icons = true, --| false, -- disable filetype icons for buffers
-    show_buffer_close_icons = true, --| false,
-    show_close_icon = true, --| false,
+    show_buffer_close_icons = false, --| false,
+    show_close_icon = false, --| false,
     show_tab_indicators = false, -- | false,
     persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
     -- can also be a table containing 2 custom separators
     -- [focused and unfocused]. eg: { '|', '|' }
     separator_style = "thin", --| "slant" | "thick" | "thin" | { 'any', 'any' },
-    enforce_regular_tabs = false, --| true,
+    enforce_regular_tabs = true, --| true,
     always_show_bufferline = true, -- | false,
     sort_by =  'tabs',  -- ,'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs' | function(buffer_a, buffer_b)
     --   -- add custom logic

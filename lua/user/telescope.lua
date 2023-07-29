@@ -78,19 +78,32 @@ end
 
 telescope.setup {
   defaults = {
+    vimgrep_arguments = {
+        'rg',
+        '--color=never',
+        '--no-heading',
+        '--with-filename',
+        '--line-number',
+        '--column',
+        '--smart-case',
+    },
     buffer_previewer_maker = new_maker,
 
     prompt_prefix = " ",
     selection_caret = " ",
-    path_display = {
-      shorten = {
-        -- e.g. for a path like
-        --   `alpha/beta/gamma/delta.txt`
-        -- setting `path_display.shorten = { len = 1, exclude = {1, -1} }`
-        -- will give a path like:
-        --   `alpha/b/g/delta.txt`
-        len = 3, exclude = { 1, -1 }
-      },
+    path_display={"smart"},
+    layout_config = {
+        horizontal = {
+            prompt_position = "top",
+            preview_width = 0.55,
+            results_width = 0.8,
+        },
+        vertical = {
+            mirror = false,
+        },
+        width = 0.87,
+        height = 0.95,
+        preview_cutoff = 120,
     },
 
     mappings = {
@@ -162,6 +175,15 @@ telescope.setup {
     find_files = {
       theme = "dropdown",
       previewer = false,
+      path_display = { "absolute" },
+      wrap_results = true
+      -- find_command = { "find", "-type", "f" },
+      -- find_command = { "fd", "-H" , "-I"},  -- "-H" search hidden files, "-I" do not respect to gitignore
+    },
+    buffers = {
+      previewer = flase,
+      path_display = { "absolute" },
+      wrap_results = true
       -- find_command = { "find", "-type", "f" },
       -- find_command = { "fd", "-H" , "-I"},  -- "-H" search hidden files, "-I" do not respect to gitignore
     },
@@ -201,8 +223,10 @@ telescope.setup {
         -- even more opts
       }
     },
-    live_grep_raw = {
+    live_grep_args = {
       auto_quoting = false, -- enable/disable auto-quoting
+      path_display = { "absolute" },
+      wrap_results = false
     }
   },
 }

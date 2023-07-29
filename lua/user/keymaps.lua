@@ -57,6 +57,13 @@ keymap("n", "<leader>sr", ":set splitright<CR>:vsplit<CR>", opts)
 -- NOTE: E/R navigation needs  'bufferline' plugin
 keymap("n", "R", ":BufferLineCycleNext<CR>", opts)
 keymap("n", "E", ":BufferLineCyclePrev<CR>", opts)
+keymap("n", "<leader>1", ":BufferLineGoToBuffer 1<CR>", opts)
+keymap("n", "<leader>2", ":BufferLineGoToBuffer 2<CR>", opts)
+keymap("n", "<leader>3", ":BufferLineGoToBuffer 3<CR>", opts)
+keymap("n", "<leader>4", ":BufferLineGoToBuffer 4<CR>", opts)
+keymap("n", "<leader>5", ":BufferLineGoToBuffer 5<CR>", opts)
+keymap("n", "<leader>6", ":BufferLineGoToBuffer 6<CR>", opts)
+keymap("n", "<leader>7", ":BufferLineGoToBuffer 7<CR>", opts)
 
 -- delete cur buffer
 keymap("n", "<leader>d", ":bp<bar>sp<bar>bn<bar>bd<CR>", opts)
@@ -98,13 +105,15 @@ keymap("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", opts)
 keymap("n", "<leader>fs", "<cmd>Telescope lsp_document_symbols<cr>", opts)
 keymap("n", "<leader>fS", "<cmd>Telescope lsp_workspace_symbols<cr>", opts)
 keymap("n", "<leader>fp", "<cmd>lua require'telescope'.extensions.project.project{}<CR>", opts)
+keymap("n", "<leader>fl", "<cmd>Telescope resume<cr>", opts)
 
 keymap("n", "<leader>df", "<cmd>Telescope dir find_files<cr>", opts)
 keymap("n", "<leader>dg", "<cmd>Telescope dir live_grep<cr>", opts)
 
+keymap("n", "<leader>tl", "<cmd>Telescope telescope-tabs list_tabs<cr>", opts)
+
 -- outline 
 keymap("n", "T", "<cmd>SymbolsOutline<cr>", opts)
-
 -- easyemotion
 vim.cmd [[nmap ss <Plug>(easymotion-s2)]]
 
@@ -118,7 +127,7 @@ vim.keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>"
 vim.keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>",
   {silent = true, noremap = true}
 )
-vim.keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>",
+vim.keymap.set("n", "<leader>xl", "<cmd>TroubleTogle loclist<cr>",
   {silent = true, noremap = true}
 )
 vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
@@ -128,5 +137,8 @@ vim.keymap.set("n", "gr", "<cmd>TroubleToggle lsp_references<cr>",
   {silent = true, noremap = true}
 )
 
+-- osyank
+vim.keymap.set('v', '<leader>c', '<Plug>OSCYank')
+
 -- git
-keymap("n", "<Leader>gp", "<cmd>DiffviewFileHistory<CR>", opts)
+keymap("n", "<Leader>gh", "<cmd>DiffviewFileHistory<CR>", opts)

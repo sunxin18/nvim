@@ -55,12 +55,16 @@ return packer.startup(function(use)
 
     -- Editor enhance
     use "jiangmiao/auto-pairs" -- autopairs
-    use "Shatur/neovim-session-manager"
+    -- use "Shatur/neovim-session-manager"
     --auto save/load
     -- use "Pocco81/AutoSave.nvim"
     use "djoshea/vim-autoread"
     -- easyemotion
     use "easymotion/vim-easymotion"
+
+    use 'karb94/neoscroll.nvim'
+    
+    use 'chentoast/marks.nvim'
 
     use {
         'stevearc/aerial.nvim',
@@ -72,6 +76,15 @@ return packer.startup(function(use)
     use "nvim-telescope/telescope-live-grep-args.nvim"
     use "nvim-telescope/telescope-file-browser.nvim"
     use "princejoogie/dir-telescope.nvim"
+    use {
+        'LukasPietzschmann/telescope-tabs',
+        requires = { 'nvim-telescope/telescope.nvim' },
+        config = function()
+            require'telescope-tabs'.setup{
+                -- Your custom config :^)
+            }
+        end
+    }
 
 
     -- project
@@ -110,8 +123,8 @@ return packer.startup(function(use)
     use "williamboman/mason.nvim" -- simple to use language server installer
     use "williamboman/mason-lspconfig.nvim"
     use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-    use "RRethy/vim-illuminate"
-    use "kosayoda/nvim-lightbulb" -- code action
+    -- use "RRethy/vim-illuminate" -- hangs on with bigfile
+    -- use "kosayoda/nvim-lightbulb" -- code action
     use "ray-x/lsp_signature.nvim" -- show function signature when typing
 
     use "j-hui/fidget.nvim" -- show lsp progress
@@ -128,8 +141,8 @@ return packer.startup(function(use)
     }
     -- Treesitter
     use {
-        "nvim-treesitter/nvim-treesitter",
-        commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
+        "nvim-treesitter/nvim-treesitter"
+        -- commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
     }
     use 'nvim-treesitter/nvim-treesitter-context'
 
@@ -140,6 +153,23 @@ return packer.startup(function(use)
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     })
+    
+    -- copy ssh
+    use {
+        "ojroques/vim-oscyank",
+        commit = "14685fcc4f487ca42dfe786dd54e4b2913370085"
+    }
+
+    -- use "dstein64/vim-startuptime"
+    use "tweekmonster/startuptime.vim"
+
+    
+    use {
+    'goolord/alpha-nvim',
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    end
+}
 
     --
     -- Automatically set up your configuration after cloning packer.nvim

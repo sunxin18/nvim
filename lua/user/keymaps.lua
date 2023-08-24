@@ -56,7 +56,7 @@ keymap("n", "<leader>sr", ":set splitright<CR>:vsplit<CR>", opts)
 
 -- NOTE: E/R navigation needs  'bufferline' plugin
 keymap("n", "R", ":BufferLineCycleNext<CR>", opts)
-keymap("n", "E", ":BufferLineCyclePrev<CR>", opts)
+-- keymap("n", "E", ":BufferLineCyclePrev<CR>", opts)
 keymap("n", "<leader>1", ":BufferLineGoToBuffer 1<CR>", opts)
 keymap("n", "<leader>2", ":BufferLineGoToBuffer 2<CR>", opts)
 keymap("n", "<leader>3", ":BufferLineGoToBuffer 3<CR>", opts)
@@ -138,7 +138,10 @@ vim.keymap.set("n", "gr", "<cmd>TroubleToggle lsp_references<cr>",
 )
 
 -- osyank
-vim.keymap.set('v', '<leader>c', '<Plug>OSCYank')
+-- vim.keymap.set('v', '<leader>c', '<Plug>OSCYank')
+vim.keymap.set('n', '<leader>c', require('osc52').copy_operator, {expr = true})
+vim.keymap.set('n', '<leader>cc', '<leader>c_', {remap = true})
+vim.keymap.set('v', '<leader>c', require('osc52').copy_visual)
 
 -- git
 keymap("n", "<Leader>gh", "<cmd>DiffviewFileHistory<CR>", opts)

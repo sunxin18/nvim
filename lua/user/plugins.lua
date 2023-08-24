@@ -155,10 +155,11 @@ return packer.startup(function(use)
     })
     
     -- copy ssh
-    use {
-        "ojroques/vim-oscyank",
-        commit = "14685fcc4f487ca42dfe786dd54e4b2913370085"
-    }
+    -- use {
+    --     "ojroques/vim-oscyank",
+    --     commit = "14685fcc4f487ca42dfe786dd54e4b2913370085"
+    -- }
+    use "ojroques/nvim-osc52"
 
     -- use "dstein64/vim-startuptime"
     use "tweekmonster/startuptime.vim"
@@ -169,7 +170,7 @@ return packer.startup(function(use)
     config = function ()
         require'alpha'.setup(require'alpha.themes.dashboard'.config)
     end
-}
+    }
 
     --
     -- Automatically set up your configuration after cloning packer.nvim
